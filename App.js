@@ -12,7 +12,7 @@ const server = http.createServer(app);
 const socket = require('socket.io');
 const io = socket(server, {
     cors: {
-        origins: 'http://localhost:7891',
+        origins: '*',
         
         // handlePreflightRequest: (req, res) => {
         //     res.writeHead(200, {
