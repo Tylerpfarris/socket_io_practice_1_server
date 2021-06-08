@@ -12,7 +12,7 @@ const server = http.createServer(app);
 const socket = require('socket.io');
 const io = socket(server, {
     cors: {
-        origins: ['https://salty-chamber-55261.herokuapp.com/', 'https://modest-hoover-a49330.netlify.app', 'http://salty-chamber-55261.herokuapp.com/', 'http://modest-hoover-a49330.netlify.app'],
+        origins: '*',
         
         handlePreflightRequest: (req, res) => {
             res.writeHead(200, {
