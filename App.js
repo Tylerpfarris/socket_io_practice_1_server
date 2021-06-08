@@ -46,7 +46,7 @@ const http = require('http').createServer(app);
 
 const io = require('socket.io')(http, {
     cors: {
-        origin: 'http://modest-hoover-a49330.netlify.app',
+        origin: 'https://modest-hoover-a49330.netlify.app',
         methods: ['GET', 'POST', 'OPTIONS'],
         credentials: true
     },
