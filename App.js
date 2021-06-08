@@ -12,14 +12,10 @@ const server = http.createServer(app);
 const socket = require('socket.io');
 const io = socket(server, {
     cors: {
-//         origins: '*',
-//          methods: ["GET", "POST", "OPTIONS"],
-//         allowedHeaders: ["req-header"],
-//         credentials: true
-//   }
+        origins: '*',
         handlePreflightRequest: (req, res) => {
             res.writeHead(200, {
-                'Access-Control-Allow-Origin': 'https://modest-hoover-a49330.netlify.app',
+                'Access-Control-Allow-Origin': '*',
                 'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
                 'Access-Control-Allow-Headers': 'my-custom-header',
                 'Access-Control-Allow-Credentials': true
@@ -62,3 +58,8 @@ io.on('connection', (socket) => {
 
 
 server.listen(8000, () => console.log('server is running on port 8000'));
+
+    //     methods: ['GET', 'POST', 'OPTIONS'],
+    //     allowedHeaders: ['req-header'],
+    //     credentials: true
+    // }
