@@ -76,7 +76,9 @@ io.on('connection', (socket) => {
     });
 });
 
-
+app.get('/hello', (req, res) => {
+    res.send('hello');
+});
 app.listen(8000, () => console.log('server is running on port 8000'));
 
     //     methods: ['GET', 'POST', 'OPTIONS'],
