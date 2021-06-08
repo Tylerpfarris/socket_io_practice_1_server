@@ -51,9 +51,9 @@ const http = require('http').createServer(app);
 const io = require('socket.io')(http, {
     cors: {
         origin: true,
-        methods: ['GET', 'POST', 'OPTIONS'],
-        allowedHeaders: ['Origin', 'Content-Type', 'X-Auth-Token'],
-        credentials: true
+        // methods: ['GET', 'POST', 'OPTIONS'],
+        // allowedHeaders: ['Origin', 'Content-Type', 'X-Auth-Token'],
+        // credentials: true
     }
 });
 
@@ -82,7 +82,7 @@ io.on('connection', (socket) => {
 app.get('/hello', (req, res) => {
     res.send('hello');
 });
-http.listen(PORT, () => console.log('server is running on port 8000'));
+http.listen(PORT, () => console.log(`server is running on ${PORT} `));
 
     //     methods: ['GET', 'POST', 'OPTIONS'],
     //     allowedHeaders: ['req-header'],
