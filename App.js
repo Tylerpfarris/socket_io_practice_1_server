@@ -12,8 +12,20 @@ const server = http.createServer(app);
 const socket = require('socket.io');
 const io = socket(server, {
     cors: {
-        origin: ['https://salty-chamber-55261.herokuapp.com/', 'https://modest-hoover-a49330.netlify.app', 'http://salty-chamber-55261.herokuapp.com/', 'http://modest-hoover-a49330.netlify.app']
-    }
+        origins: ['https://salty-chamber-55261.herokuapp.com/', 'https://modest-hoover-a49330.netlify.app', 'http://salty-chamber-55261.herokuapp.com/', 'http://modest-hoover-a49330.netlify.app'],
+        
+        handlePreflightRequest: (req, res) => {
+            res.writeHead(200, {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET,POST',
+                'Access-Control-Allow-Headers': 'my-custom-header',
+                'Access-Control-Allow-Credentials': true
+            });
+            res.end();
+        }
+    },
+    
+    
 
 });
 
