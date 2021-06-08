@@ -44,8 +44,6 @@ const app = express();
 app.use(require('cors')({
     origin: true,
     credentials: true,
-    methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Access-Control-Allow-Origin']
 }));
 const http = require('http').createServer(app);
 
@@ -53,8 +51,6 @@ const io = require('socket.io')(http, {
     cors: {
         origin: 'https://modest-hoover-a49330.netlify.app',
         methods: ['GET', 'POST', 'OPTIONS'],
-        allowHeaders: ['Access-Control-Allow-Origin'],
-        credentials: true
     },
 });
 
