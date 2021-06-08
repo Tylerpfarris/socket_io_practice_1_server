@@ -19,7 +19,7 @@ const io = socket(server, {
 //   }
         handlePreflightRequest: (req, res) => {
             res.writeHead(200, {
-                'Access-Control-Allow-Origin': 'https://salty-chamber-55261.herokuapp.com/',
+                'Access-Control-Allow-Origin': 'https://modest-hoover-a49330.netlify.app',
                 'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
                 'Access-Control-Allow-Headers': 'my-custom-header',
                 'Access-Control-Allow-Credentials': true
