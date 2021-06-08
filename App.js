@@ -11,12 +11,12 @@ const server = http.createServer(app);
 // }));
 const socket = require('socket.io');
 const io = socket(server, {
-    allowRequest: (req, cb) => {
-        const isAllowed = req.headers.origin === 'https://modest-hoover-a49330.netlify.app/';
-        cb(null, isAllowed);
-    },
+    // allowRequest: (req, cb) => {
+    //     const isAllowed = req.headers.origin === 'https://modest-hoover-a49330.netlify.app/';
+    //     cb(null, isAllowed);
+    // },
     cors: {
-        origins: '*',
+        origin: '*',
         handlePreflightRequest: (req, res) => {
             res.writeHead(200, {
                 'Access-Control-Allow-Origin': '*',
