@@ -17,6 +17,7 @@ const io = socket(server, {
     // },
     cors: {
         origin: '*',
+        methods: ['GET', 'POST', 'OPTIONS'],
         handlePreflightRequest: (req, res) => {
             res.writeHead(200, {
                 'Access-Control-Allow-Origin': '*',
