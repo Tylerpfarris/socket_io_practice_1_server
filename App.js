@@ -16,6 +16,8 @@ const io = socket(server, {
     }
 
 });
+
+io.use(cors());
 // app.get('/', (req, res) => {
 //     res.send({ response: 'I am alive' }).status(200);
   
