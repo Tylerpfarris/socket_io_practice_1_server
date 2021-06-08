@@ -43,7 +43,9 @@ const express = require('express');
 const app = express();
 app.use(require('cors')({
     origin: true,
-    credentials: true
+    credentials: true,
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Access-Control-Allow-Origin']
 }));
 const http = require('http').createServer(app);
 
