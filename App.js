@@ -48,6 +48,7 @@ const io = require('socket.io')(http, {
     cors: {
         origin: 'http://modest-hoover-a49330.netlify.app',
         methods: ['GET', 'POST', 'OPTIONS'],
+        allowHeaders: ['Origin'],
         credentials: true
     },
 });
