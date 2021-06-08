@@ -82,7 +82,7 @@ io.on('connection', (socket) => {
 app.get('/hello', (req, res) => {
     res.send('hello');
 });
-app.listen(PORT, () => console.log('server is running on port 8000'));
+http.listen(PORT, () => console.log('server is running on port 8000'));
 
     //     methods: ['GET', 'POST', 'OPTIONS'],
     //     allowedHeaders: ['req-header'],
