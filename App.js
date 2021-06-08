@@ -12,7 +12,7 @@ const server = http.createServer(app);
 const socket = require('socket.io');
 const io = socket(server, {
     cors: {
-        origin: ['http://localhost:7891', 'https://localhost:7891', 'https://4b8f2dfd9dc5.ngrok.io', 'http://4b8f2dfd9dc5.ngrok.io'],
+        origin: ['*'],
     },
     credentials: true,
 });
