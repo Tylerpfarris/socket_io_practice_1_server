@@ -50,8 +50,10 @@ const http = require('http').createServer(app);
 const io = require('socket.io')(http, {
     cors: {
         origin: true,
-        credentials: true,
-    },
+        methods: ['GET', 'POST', 'OPTIONS'],
+        allowedHeaders: ['Origin', 'Content-Type', 'X-Auth-Token'],
+        credentials: true
+    }
 });
 
 app.use(express.json());
@@ -79,7 +81,7 @@ io.on('connection', (socket) => {
 app.get('/hello', (req, res) => {
     res.send('hello');
 });
-app.listen(8000, () => console.log('server is running on port 8000'));
+http.listen(8000, () => console.log('server is running on port 8000'));
 
     //     methods: ['GET', 'POST', 'OPTIONS'],
     //     allowedHeaders: ['req-header'],
