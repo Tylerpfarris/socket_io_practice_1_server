@@ -12,9 +12,9 @@ const server = http.createServer(app);
 const socket = require('socket.io');
 const io = socket(server, {
     cors: {
-        origin: ['*'],
+        origin: ['https://salty-chamber-55261.herokuapp.com/', 'https://modest-hoover-a49330.netlify.app']
     },
-    credentials: true,
+
 });
 // app.get('/', (req, res) => {
 //     res.send({ response: 'I am alive' }).status(200);
