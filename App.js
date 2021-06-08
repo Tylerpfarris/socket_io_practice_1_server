@@ -41,6 +41,7 @@
 
 const express = require('express');
 const app = express();
+const PORT = process.env.PORT || 8000;
 app.use(require('cors')({
     origin: true,
     credentials: true,
@@ -81,7 +82,7 @@ io.on('connection', (socket) => {
 app.get('/hello', (req, res) => {
     res.send('hello');
 });
-http.listen(8000, () => console.log('server is running on port 8000'));
+app.listen(PORT, () => console.log('server is running on port 8000'));
 
     //     methods: ['GET', 'POST', 'OPTIONS'],
     //     allowedHeaders: ['req-header'],
