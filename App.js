@@ -12,24 +12,23 @@ const server = http.createServer(app);
 const socket = require('socket.io');
 const io = socket(server, {
     cors: {
-        origins: '*',
+        origins: 'http://localhost:7891',
         
-        handlePreflightRequest: (req, res) => {
-            res.writeHead(200, {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET,POST',
-                'Access-Control-Allow-Headers': 'my-custom-header',
-                'Access-Control-Allow-Credentials': true
-            });
-            res.end();
-        }
+        // handlePreflightRequest: (req, res) => {
+        //     res.writeHead(200, {
+        //         'Access-Control-Allow-Origin': '*',
+        //         'Access-Control-Allow-Methods': 'GET,POST',
+        //         'Access-Control-Allow-Headers': 'my-custom-header',
+        //         'Access-Control-Allow-Credentials': true
+        //     });
+        //     res.end();
+        // }
     },
     
     
 
 });
 
-io.use(cors());
 // app.get('/', (req, res) => {
 //     res.send({ response: 'I am alive' }).status(200);
   
